@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="208.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="92.0" />
@@ -56,7 +56,7 @@
             <Insets left="90.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" text="Submit" GridPane.rowIndex="5">
+      <Button mnemonicParsing="false" onAction="#swichToLogin" text="Submit" GridPane.rowIndex="5">
          <GridPane.margin>
             <Insets left="90.0" />
          </GridPane.margin>
