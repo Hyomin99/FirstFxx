@@ -1,5 +1,9 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -9,6 +13,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -31,6 +38,13 @@ public class LoginController {
 	private GridPane loginscene;
 	@FXML
 	private Pane checkscene;
+    @FXML
+    private TextField crtID;
+    @FXML
+    private PasswordField crtPW;
+    @FXML
+    private Label IDCheck;
+
 	
 
 	// private Parent root;
@@ -42,10 +56,25 @@ public class LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+
 	}
 
 	@FXML //Sign Up 페이지에서 submit 누르면 Login 페이지로 넘어감 
 	void swichToLogin(ActionEvent event) throws IOException {
+		
+		String ID = crtID.getText();
+		String PW = crtPW.getText();
+		
+		//Sign Up 누르면 텍스트 파일 생성
+		FileWriter fw = new FileWriter("C:/Users/효민/Desktop/SignUp/UserID.txt",true);
+		fw.write(ID +"\n");
+	    fw.close();
+	    FileWriter fw2 = new FileWriter("C:/Users/효민/Desktop/SignUp/UserIDPW.txt",true);
+	    fw2.write(ID +" " + PW +"\n");
+	    fw2.close();
+		
+
+	    
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
@@ -80,5 +109,28 @@ public class LoginController {
 		stage.show(); 
 	  }
 	  
+	  @FXML // 중복확인 눌렀을때 중복인지 아닌지 검사
+	  void checkID(ActionEvent event)throws IOException {
+		  String ID = crtID.getText();
+		  BufferedReader br = new BufferedReader(new FileReader("C:/Users/효민/Desktop/SignUp/UserID.txt"));
+		  
+		  //텍스트에 입력한 문자열과 메모장에 입력되어있는 문자열 비교
+		  while(true) { 
+			  
+			  String line = br.readLine();
+			  
+				  if(ID.equals(line)){  
+					  IDCheck.setText("중복된 아이디 입니다. "); 
+					  break;
+					  }
+				  
+				  else if(line==null) {
+					  
+					 IDCheck.setText("사용 가능한 아이디 입니다. ");
+					  break; 
+					  }	  
+		  }
+		  br.close();
+	  }
 	 
 }
