@@ -30,27 +30,27 @@
             <Insets left="10.0" />
          </GridPane.margin>
       </TextField>
-      <PasswordField fx:id="crtPW" prefHeight="22.0" prefWidth="185.0" promptText="PW" GridPane.rowIndex="3">
+      <PasswordField fx:id="crtPW" prefHeight="22.0" prefWidth="185.0" promptText="PW" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
       </PasswordField>
-      <Button mnemonicParsing="false" onAction="#checkID" text="Check ID" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button mnemonicParsing="false" onAction="#checkID" text="확인" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="5.0" />
          </GridPane.margin>
       </Button>
-      <Label prefHeight="64.0" prefWidth="49.0" text="Sign - Up">
+      <Label prefHeight="64.0" prefWidth="49.0" text="회원가입">
          <GridPane.margin>
             <Insets left="90.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" onAction="#swichToLogin" text="Sign Up" GridPane.rowIndex="4">
+      <Button mnemonicParsing="false" onAction="#swichToLogin" text="제출" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets left="90.0" />
          </GridPane.margin>
       </Button>
-      <Label fx:id="IDCheck" prefHeight="22.0" prefWidth="208.0" GridPane.rowIndex="2">
+      <Label fx:id="IDCheck" prefHeight="22.0" prefWidth="208.0" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>

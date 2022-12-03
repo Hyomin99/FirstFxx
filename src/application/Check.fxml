@@ -7,12 +7,12 @@
 
 <Pane fx:id="checkscene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="201.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
-      <Label layoutX="7.0" layoutY="14.0" prefHeight="29.0" prefWidth="201.0" text="Do you want exit?">
+      <Label layoutX="7.0" layoutY="14.0" prefHeight="29.0" prefWidth="201.0" text="Do you wnat exit?">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="yesbutton" layoutX="32.0" layoutY="57.0" mnemonicParsing="false" onAction="#check" prefHeight="29.0" prefWidth="52.0" text="Yes" />
-      <Button fx:id="nobutton" layoutX="121.0" layoutY="57.0" mnemonicParsing="false" onAction="#goback" prefHeight="29.0" prefWidth="52.0" text="No" />
+      <Button fx:id="yesbutton" layoutX="32.0" layoutY="57.0" mnemonicParsing="false" onAction="#check" prefHeight="29.0" prefWidth="52.0" text="예" />
+      <Button fx:id="nobutton" layoutX="121.0" layoutY="57.0" mnemonicParsing="false" onAction="#goback" prefHeight="29.0" prefWidth="52.0" text="취소" />
    </children>
 </Pane>

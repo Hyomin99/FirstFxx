@@ -26,7 +26,7 @@
             <Insets left="10.0" />
          </GridPane.margin>
       </PasswordField>
-      <CheckBox mnemonicParsing="false" text="Remember ID" GridPane.columnIndex="1">
+      <CheckBox mnemonicParsing="false" text="아이디 기억하기" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
@@ -38,9 +38,9 @@
       </TextField>
       <HBox prefHeight="33.0" prefWidth="232.0" spacing="20.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <children>
-            <Button mnemonicParsing="false" text="LogIn" />
-            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#close" text="Cancel" />
-            <Button mnemonicParsing="false" onAction="#swichToSignUp" text="Sign Up" />
+            <Button mnemonicParsing="false" text="로그인" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#close" text="종료" />
+            <Button mnemonicParsing="false" onAction="#swichToSignUp" text="회원가입" />
          </children>
          <GridPane.margin>
             <Insets left="30.0" />
