@@ -44,6 +44,14 @@ public class LoginController {
     private PasswordField crtPW;
     @FXML
     private Label IDCheck;
+    @FXML
+    private Label WrongPW;
+    @FXML
+    private TextField InputID;
+    @FXML
+    private PasswordField InputPW;
+    
+    
     
     class nextscene {//다음 페이지로 넘어가는 복사코드
     	
@@ -112,6 +120,7 @@ public class LoginController {
 	  
 	  @FXML 
     void checkID(ActionEvent event)throws IOException {// 중복확인 눌렀을때 중복인지 아닌지 검사
+
 		  String ID = crtID.getText();
 		  String PW = crtPW.getText();
 		  BufferedReader br = new BufferedReader(new FileReader("C:/Users/효민/Desktop/SignUp/UserID.txt"));
@@ -130,6 +139,38 @@ public class LoginController {
 		  
 	  }
    }
-}
+
+	@FXML  
+	void LoginClick(ActionEvent event)throws IOException {
+		
+		
+		String ID = InputID.getText();
+		String PW = InputPW.getText();
+		String line;
+		boolean IDtrue = false;
+		boolean PWtrue = false;
+		BufferedReader br = new BufferedReader(new FileReader("C:/Users/효민/Desktop/SignUp/UserIDPW.txt"));
+		
+
+			while((line = br.readLine()) != null) {
+				
+				String[] IDPW = line.split(" ");
+				IDtrue = ID.equals(IDPW[0]);
+				PWtrue = PW.equals(IDPW[1]);
+				
+				if((IDtrue == true && PWtrue == true) == true) {nextscene ns = new nextscene(event,"/application/Hi.fxml");break;} // 옳은 정보일 시 화면전환
+				else if((IDtrue == false && PWtrue == false) == true){WrongPW.setText("정보가 없습니다.");} // 잘못입력
+				
+			}
+					
+		}
+		
+		
+	
+	}
+		  
+	  
+
+
 	 
 
