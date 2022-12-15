@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -51,6 +52,7 @@ public class LoginController {
     @FXML
     private PasswordField InputPW;
     
+    dd aa = dd.getInstance();
     
     
     class nextscene {//다음 페이지로 넘어가는 복사코드
@@ -78,7 +80,7 @@ public class LoginController {
 		  String ID = crtID.getText();
 		  String PW = crtPW.getText();
 		  
-		  BufferedReader br = new BufferedReader(new FileReader("C:/Users/효민/Desktop/SignUp/UserID.txt"));
+		  BufferedReader br = new BufferedReader(new FileReader("C:/자바 유저/UserID.txt"));
 		  
 		  while(true) {//제출 눌렀을때 모든 조건 충족할 시 저장
 			  
@@ -87,10 +89,10 @@ public class LoginController {
 		if( ID.isBlank() == true || PW.isBlank() == true) {IDCheck.setText("확인 버튼을 누른 뒤 진행해 주세요."); break;}
 		else if(IDCheck.getText().equals("중복된 아이디 입니다. ")||IDCheck.getText().equals("")) {IDCheck.setText("확인 버튼을 누른 뒤 진행해 주세요."); break;}
 		else {
-		FileWriter fw = new FileWriter("C:/Users/효민/Desktop/SignUp/UserID.txt",true);
+		FileWriter fw = new FileWriter("C:/자바 유저/UserID.txt",true);
 		fw.write(ID +"\n");
 	    fw.close();
-	    FileWriter fw2 = new FileWriter("C:/Users/효민/Desktop/SignUp/UserIDPW.txt",true);
+	    FileWriter fw2 = new FileWriter("C:/자바 유저/UserIDPW.txt",true);
 	    fw2.write(ID +" " + PW +"\n");
 	    fw2.close();
 	    br.close();
@@ -123,7 +125,7 @@ public class LoginController {
 
 		  String ID = crtID.getText();
 		  String PW = crtPW.getText();
-		  BufferedReader br = new BufferedReader(new FileReader("C:/Users/효민/Desktop/SignUp/UserID.txt"));
+		  BufferedReader br = new BufferedReader(new FileReader("C:/자바 유저/UserID.txt"));
 		
 		  //텍스트에 입력한 문자열과 메모장에 입력되어있는 문자열 비교
 		  while(true) { 
@@ -141,7 +143,7 @@ public class LoginController {
    }
 
 	@FXML  
-	void LoginClick(ActionEvent event)throws IOException {
+	public void LoginClick(ActionEvent event)throws IOException {
 		
 		
 		String ID = InputID.getText();
@@ -149,7 +151,7 @@ public class LoginController {
 		String line;
 		boolean IDtrue = false;
 		boolean PWtrue = false;
-		BufferedReader br = new BufferedReader(new FileReader("C:/Users/효민/Desktop/SignUp/UserIDPW.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:/자바 유저/UserIDPW.txt"));
 		
 
 			while((line = br.readLine()) != null) {
@@ -158,7 +160,26 @@ public class LoginController {
 				IDtrue = ID.equals(IDPW[0]);
 				PWtrue = PW.equals(IDPW[1]);
 				
-				if((IDtrue == true && PWtrue == true) == true) {nextscene ns = new nextscene(event,"/application/Hi.fxml");break;} // 옳은 정보일 시 화면전환
+				if((IDtrue == true && PWtrue == true) == true) {
+					
+					String filePath = "C:/자바 유저/"+InputID.getText()+"의 일정.txt"; 
+					aa.setFilepath(filePath);
+					
+					File file = new File(filePath); //로그인 한 사람의 일정 계획 텍스트 생성
+					
+					if(!file.exists()){ // 텍스트 파일이 존재하지 않다면
+			            file.createNewFile(); // 텍스트파일 생성
+			            nextscene ns = new nextscene(event,"/application/Main.fxml");
+			            break;
+			        }
+					
+					else if(file.exists()) { //텍스트 파일이 존재한다면
+						nextscene ns = new nextscene(event,"/application/Main.fxml"); //그냥 다음 페이지로
+					    break;
+					}
+					
+				} // 옳은 정보일 시 화면전환
+				
 				else if((IDtrue == false && PWtrue == false) == true){WrongPW.setText("정보가 없습니다.");} // 잘못입력
 				
 			}
