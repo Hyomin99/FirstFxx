@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Button layoutX="31.0" layoutY="27.0" mnemonicParsing="false" onAction="#CalendarCL" prefHeight="99.0" prefWidth="239.0" text="일정 입력">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="136.0" mnemonicParsing="false" onAction="#ViewSD" prefHeight="99.0" prefWidth="239.0" text="일정 확인/수정">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="247.0" mnemonicParsing="false" onAction="#CheckOut" prefHeight="99.0" prefWidth="239.0" text="종료">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

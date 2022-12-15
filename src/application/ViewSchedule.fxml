@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Label fx:id="schedule1" layoutX="26.0" layoutY="99.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule2" layoutX="26.0" layoutY="132.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule3" layoutX="26.0" layoutY="165.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule4" layoutX="25.0" layoutY="198.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule5" layoutX="25.0" layoutY="231.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule6" layoutX="25.0" layoutY="264.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule7" layoutX="25.0" layoutY="297.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule8" layoutX="26.0" layoutY="330.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule19" layoutX="25.0" layoutY="363.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label fx:id="schedule10" layoutX="25.0" layoutY="396.0" prefHeight="33.0" prefWidth="550.0" />
+      <Label layoutX="240.0" layoutY="24.0" prefHeight="33.0" prefWidth="120.0" text="일정 목록">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
