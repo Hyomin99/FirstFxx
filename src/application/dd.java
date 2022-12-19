@@ -11,14 +11,14 @@ public class dd {
 		return dd;
 	}
 	
-	private String filepath;
+	private String userid;
 	
-	public String getFilepath() {
-		return filepath;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setFilepath(String filepath) {
-		this.filepath = filepath;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	
 	

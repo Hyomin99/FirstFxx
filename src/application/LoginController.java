@@ -140,6 +140,7 @@ public class LoginController {
 		 
 		  
 	  }
+		  br.close();
    }
 
 	@FXML  
@@ -163,9 +164,10 @@ public class LoginController {
 				if((IDtrue == true && PWtrue == true) == true) {
 					
 					String filePath = "C:/자바 유저/"+InputID.getText()+"의 일정.txt"; 
-					aa.setFilepath(filePath);
+					String userid = InputID.getText();
+					aa.setUserid(userid);
 					
-					File file = new File(filePath); //로그인 한 사람의 일정 계획 텍스트 생성
+					File file = new File(filePath); //만들 로그인 한 사람의 일정 계획 텍스트 파일
 					
 					if(!file.exists()){ // 텍스트 파일이 존재하지 않다면
 			            file.createNewFile(); // 텍스트파일 생성
@@ -183,6 +185,7 @@ public class LoginController {
 				else if((IDtrue == false && PWtrue == false) == true){WrongPW.setText("정보가 없습니다.");} // 잘못입력
 				
 			}
+			br.close();
 					
 		}
 		

@@ -1,5 +1,8 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -9,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -26,6 +30,8 @@ public class MainController {
 	private Button yesbutton;
 	@FXML
 	private Button nobutton;
+    @FXML
+    private TextArea textArea;
 	
 	dd aa = dd.getInstance();
 	
@@ -44,14 +50,13 @@ public class MainController {
 	
     @FXML
     void ViewSD(ActionEvent event) throws IOException { // 일정 보기 누를시 일정 확인하는 페이지로 넘어감
-    	nextscene ns = new nextscene(event,"/application/ViewSchedule.fxml");
-    	System.out.println(aa.getFilepath());
-    	
+    	nextscene ns = new nextscene(event,"/application/ViewSchedule.fxml"); // 일정 보기로 넘어감
     }
 	
 	@FXML
     void CalendarCL(ActionEvent event) throws IOException { //일정 등록 누를시 일정 등록하는 페이지로 넘어감
 		nextscene ns = new nextscene(event,"/application/Array.fxml");	
+		
 	}
 	
 	
