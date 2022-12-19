@@ -1,8 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScheduleController">
+   <children>
+      <Label layoutX="255.0" layoutY="21.0" text="일정 수정">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="textArea" layoutX="64.0" layoutY="64.0" prefHeight="305.0" prefWidth="473.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextArea>
+      <Label layoutX="159.0" layoutY="381.0" prefHeight="23.0" prefWidth="300.0" text="몇 번째 행을 수정하시겠습니까?">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="NumBox" layoutX="247.0" layoutY="411.0" prefHeight="22.0" prefWidth="39.0" />
+      <Label layoutX="291.0" layoutY="410.0" prefHeight="23.0" prefWidth="111.0" text="번째 행을 ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="282.0" layoutY="499.0" mnemonicParsing="false" onAction="#Editbt" prefHeight="29.0" prefWidth="54.0" text="수정">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="259.0" layoutY="331.0" mnemonicParsing="false" onAction="#ClShow" text="일정 보기">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="YearTb" layoutX="160.0" layoutY="441.0" prefHeight="22.0" prefWidth="39.0" />
+      <TextField fx:id="MonthTb" layoutX="214.0" layoutY="442.0" prefHeight="22.0" prefWidth="39.0" />
+      <TextField fx:id="DayTb" layoutX="272.0" layoutY="442.0" prefHeight="22.0" prefWidth="39.0" />
+      <TextField fx:id="ClockTb" layoutX="333.0" layoutY="443.0" prefHeight="22.0" prefWidth="39.0" />
+      <TextField fx:id="MinTb" layoutX="387.0" layoutY="443.0" prefHeight="22.0" prefWidth="39.0" />
+      <TextField fx:id="SceduleTb" layoutX="270.0" layoutY="471.0" prefHeight="22.0" prefWidth="162.0" />
+      <Label layoutX="199.0" layoutY="443.0" text="년">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="257.0" layoutY="443.0" text="월">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="311.0" layoutY="444.0" text="일">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="372.0" layoutY="443.0" text="시">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="426.0" layoutY="445.0" text="분">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="187.0" layoutY="472.0" prefHeight="19.0" prefWidth="84.0" text="일정 제목 :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
